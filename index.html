@@ -1,93 +1,140 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>DORG</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row vh-20 p-5 bg-primary text-white align-items-center">
-        <div class="col text-center">
-          <h1>Hello and wellcome</h1>
-          <h2>to <b>DORG</b></h2>
-        </div>
-      </div>
-      <div class="row p-10 my-5 justify-content-center">
-        <div class="col-md-1 text-secondary-emphasis bg-light text-secondary-emphasis font-weight-bold d-flex align-items-center justify-content-center">
-          DCPU
-        </div>
-        <div class="col-md-6 bg-light-empasis text-secondary">
-          <ul>
-            <li>DCPU is a custom 8 bit CPU that combines old-school simplicity and modern ambition.</li>
-            <li>It has its own ISA and instruction encoding.</li>
-            <li>Its goal is to be easy to understand and learn at all levels, <br>
-              even the machine code isn't too hard to learn.</li>
-            <li>It was built from scratch by Petar Filo and David Mikacic <br>
-              because we wanted to learn more about how CPUs work.</li>
-          </ul>
-        </div>
-      </div>
+<html lang="en" data-bs-theme="light">
 
-      <div class="row p-10 my-5 justify-content-center">
-        <div class="col-md-1 text-secondary-emphasis bg-light text-secondary-emphasis font-weight-bold d-flex align-items-center justify-content-center">
-          DASM
-        </div>
-        <div class="col-md-6 bg-light-empasis text-secondary">
-          <ul>
-            <li>DASM is the official assembler for DCPU.</li>
-            <li>It supports all of the instructions and modifiers.</li>
-            <li>It has data directives <br>
-              that allow you to put some data into ram with the instructions.</li>
-            <li>It also supporrts comments and labels.</li>
-          </ul>
-        </div>
-      </div>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <div class="row p-10 my-5 justify-content-center">
-        <div class="col-md-1 text-secondary-emphasis bg-light text-secondary-emphasis font-weight-bold d-flex align-items-center justify-content-center">
-          DCPU text screen
-        </div>
-        <div class="col-md-6 bg-light-empasis text-secondary">
-          <ul>
-            <li>DCPU text screen is an UTF-8 text based screen <br>made for the DCPU</li>
-            <li>It can display characters and clear the screen</li>
-          </ul>
-        </div>
-      </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<title>DORG</title>
 
-      <div class="row p-10 my-5 justify-content-center">
-        <div class="col-md-1 text-secondary-emphasis bg-light text-secondary-emphasis font-weight-bold d-flex align-items-center justify-content-center">
-          DLANG
-        </div>
-        <div class="col-md-6 bg-light-empasis text-secondary">
-          <ul>
-            <li>DLANG is a simple language made for DCPU that is inspired by c, <br>
-              but it's made with DASM constrictions in mind.</li>
-            <li>It has 3 data types, while and for loops, if-else statements, functions, pointers <br>
-              and a preprocesor so you can include libraries.</li>
-          </ul>
-        </div>
-      </div>
+<style>
+.glow-btn {
+    color: #0d6efd;
+    transition: color 0.2s ease;
+}
 
+.glow-btn:hover {
+    color: #3399ff;
+}
+</style>
+</head>
 
+<body>
 
+<div class="container py-5">
 
-      <div class="row mt-5 pt-4 border-top">
-        <div class="col text-center text-muted">
-          <p>© 2026 DORG. All rights reserved.</p>
-          <p>
-            <strong>Credits:</strong> Petar Filo & David Mikacic · 
-            <strong>Contact:</strong> <a href="mailto:david.mikacic2008+DCPU@gmail.com">david.mikacic2008+DCPU@gmail.com</a>
-          </p>
-        </div>
-      </div>
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">DORG</a>
+
+    <div class="navbar-nav">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">Projects</a>
+      <a class="nav-link" href="#">About</a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-  </body>
+
+    <button id="themeToggle" class="btn btn-light ms-auto">Dark mode</button>
+  </div>
+</nav>
+
+
+<header class="text-center bg-primary text-white rounded-4 p-5 mb-5 shadow">
+    <h1 class="display-3 fw-bold">DORG</h1>
+    <p class="lead mb-0">A custom computing ecosystem</p>
+</header>
+
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <button class="btn fs-3 p-0 border-0 bg-transparent glow-btn">DCPU</button>
+        <ul class="mb-0">
+            <li>DCPU is a custom 8-bit CPU that combines old-school simplicity with modern ambition.</li>
+            <li>It has its own ISA and instruction encoding.</li>
+            <li>Its goal is to be easy to understand and learn at all levels.</li>
+            <li>Even the machine code is designed to be relatively easy to read.</li>
+            <li>Built from scratch to learn how CPUs work.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <button class="btn fs-3 p-0 border-0 bg-transparent glow-btn">DASM</button>
+        <ul class="mb-0">
+            <li>DASM is the official assembler for DCPU.</li>
+            <li>Supports all instructions and modifiers.</li>
+            <li>Data directives allow inserting raw data into RAM.</li>
+            <li>Includes labels and comments for readable assembly code.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <button class="btn fs-3 p-0 border-0 bg-transparent glow-btn">Text Screen</button>
+        <ul class="mb-0">
+            <li>A UTF-8 text display designed for DCPU.</li>
+            <li>Capable of printing characters and clearing the screen.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="card mb-5 shadow-sm">
+    <div class="card-body">
+        <button class="btn fs-3 p-0 border-0 bg-transparent glow-btn">DLANG</button>
+        <ul class="mb-0">
+            <li>A simple programming language designed for DCPU.</li>
+            <li>Inspired by C while respecting DASM constraints.</li>
+            <li>Supports 3 data types.</li>
+            <li>Includes loops (while / for), if-else statements, functions, and pointers.</li>
+            <li>Features a preprocessor for libraries.</li>
+        </ul>
+    </div>
+</div>
+
+
+<footer class="text-center border-top pt-4 text-muted">
+<p class="mb-1">© 2026 DORG</p>
+<p class="mb-0">
+<strong>Credits:</strong> Petar Filo & David Mikačić<br>
+<strong>Contact:</strong>
+<a href="mailto:david.mikacic2008+DCPU@gmail.com">david.mikacic2008+DCPU@gmail.com</a>
+</p>
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const button = document.getElementById("themeToggle");
+const html = document.documentElement;
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    html.setAttribute("data-bs-theme", savedTheme);
+    button.textContent = savedTheme === "dark" ? "Light mode" : "Dark mode";
+}
+
+button.addEventListener("click", () => {
+    const currentTheme = html.getAttribute("data-bs-theme");
+
+    if (currentTheme === "dark") {
+        html.setAttribute("data-bs-theme", "light");
+        localStorage.setItem("theme", "light");
+        button.textContent = "Dark mode";
+    } else {
+        html.setAttribute("data-bs-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        button.textContent = "Light mode";
+    }
+});
+</script>
+
+</body>
 </html>
-
-
